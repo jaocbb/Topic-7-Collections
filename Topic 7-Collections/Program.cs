@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,9 +13,11 @@ namespace Topic_7_Collections
     {
         static void Main(string[] args)
         {
-            // I am Jacob
+            // Pull to git
             int choice = 0,removeNum;
-            Console.WriteLine("Here are the numbers I chose for you. ");
+            //string newnum = new;
+
+            Console.WriteLine("Here are the numbers I chose for you");
             int[] nums = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 19, 18, 12, 16, 15, 14, 13, 12, 11, 15, 14 };
             var number = String.Join(",", nums);
             Console.Write(number);
@@ -22,6 +25,11 @@ namespace Topic_7_Collections
             Console.WriteLine("Click 1 to sort them from least to greatest.");
             Console.WriteLine("Click 2 to have a new list of numbers.");
             Console.WriteLine("Click 3 to Remove a number(by value)");
+            Console.WriteLine("CLick 4 to add a value");
+            Console.WriteLine("Click 5 to count the number of occurrences of a specified number"); 
+            Console.WriteLine("CLick 6 to Print the largest number");
+            Console.WriteLine("Click 7 to print the smallest value");
+            Console.WriteLine("Click 8 to quit");
             choice = Convert.ToInt32(Console.ReadLine());
             if (choice == 1) 
             {
@@ -39,12 +47,40 @@ namespace Topic_7_Collections
             {
                 Console.WriteLine("Which number would you like to remove");
                 removeNum = Convert.ToInt32(Console.ReadLine());
-                string strNumbers = " 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 19, 18, 12, 16, 15, 14, 13, 12, 11, 15, 14";
-                ArrayList numbers = new ArrayList(strNumbers.Split(new char[] { ',' }));
-                numbers.RemoveAt(numbers.IndexOf(10));
+               // public void RemoveAt(int index);
 
             }
-            Console.ReadLine();
+            if (choice == 4) 
+            {
+               // newnum.Add();
+            }
+            if (choice == 5) 
+            {
+            
+            }
+            if (choice == 6) 
+            {
+                Console.Write("The largest number is :");
+                int[] numbers = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 19, 18, 12, 16, 15, 14, 13, 12, 11, 15, 14 };
+                int largestNumber = numbers.Max();
+                Console.WriteLine(largestNumber);
+                Console.ReadLine();
+            }
+            if (choice == 7) 
+            {
+                Console.WriteLine("The smallest number is :");
+                int[] numbers = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 19, 18, 12, 16, 15, 14, 13, 12, 11, 15, 14 };
+                int smallestNumber = numbers.Min();
+                Console.WriteLine(smallestNumber);
+                Console.ReadLine();
+            }
+            if (choice == 8) 
+            {
+               
+            }
+        
+        
+        
         
         
         
