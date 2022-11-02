@@ -12,6 +12,7 @@ namespace Topic_7_Collections
     {
         static void Main(string[] args)
         {
+            // I am Jacob
             int choice = 0,removeNum;
             Console.WriteLine("Here are the numbers I chose for you. ");
             int[] nums = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 19, 18, 12, 16, 15, 14, 13, 12, 11, 15, 14 };
