@@ -14,7 +14,7 @@ namespace Topic_7_Collections
         static void Main(string[] args)
         {
             // Pull to git
-            int choice = 0,removeNum;
+            int choice = 0, removeNum,remnum;
             //string newnum = new;
 
             Console.WriteLine("Here are the numbers I chose for you");
@@ -43,12 +43,12 @@ namespace Topic_7_Collections
                 var Newnumbers = String.Join(",", Newnums);
                 Console.WriteLine(Newnumbers);
             }
-            if (choice == 3) 
+            if (choice == 3)
             {
                 Console.WriteLine("Which number would you like to remove");
-                removeNum = Convert.ToInt32(Console.ReadLine());
-               // public void RemoveAt(int index);
-
+                remnum = Convert.ToInt32(Console.ReadLine());
+                number.Remove(remnum);
+                Console.WriteLine(number);
             }
             if (choice == 4) 
             {
@@ -56,7 +56,13 @@ namespace Topic_7_Collections
             }
             if (choice == 5) 
             {
-            
+                Console.WriteLine("Here are the numbers occurrences");
+                var count = new List<int>() { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 19, 18, 12, 16, 15, 14, 13, 12, 11, 15, 14 };
+                var g = count.GroupBy(i => i);
+                foreach (var grp in g)
+                {
+                    Console.WriteLine("{0} {1}",grp.Key,grp.Count());
+                }
             }
             if (choice == 6) 
             {
@@ -76,7 +82,8 @@ namespace Topic_7_Collections
             }
             if (choice == 8) 
             {
-               
+                Console.WriteLine("Closing");
+                Environment.Exit(0);
             }
         
         
