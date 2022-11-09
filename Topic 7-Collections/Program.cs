@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace Topic_7_Collections
 {
-    internal class Program
+
+   internal class Program
     {
         static void Main(string[] args)
         {
@@ -46,16 +47,23 @@ namespace Topic_7_Collections
             if (choice == 3)
             {
                 Console.WriteLine("Which number would you like to remove");
+
                 remnum = Convert.ToInt32(Console.ReadLine());
                 number.Remove(remnum);
                 Console.WriteLine(number);
+
+                removeNum = Convert.ToInt32(Console.ReadLine());
+               
+
+
             }
             if (choice == 4) 
             {
-               // newnum.Add();
+               // add value to list 
             }
             if (choice == 5) 
             {
+
                 Console.WriteLine("Here are the numbers occurrences");
                 var count = new List<int>() { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 19, 18, 12, 16, 15, 14, 13, 12, 11, 15, 14 };
                 var g = count.GroupBy(i => i);
@@ -63,6 +71,7 @@ namespace Topic_7_Collections
                 {
                     Console.WriteLine("{0} {1}",grp.Key,grp.Count());
                 }
+
             }
             if (choice == 6) 
             {
@@ -82,19 +91,33 @@ namespace Topic_7_Collections
             }
             if (choice == 8) 
             {
+
                 Console.WriteLine("Closing");
                 Environment.Exit(0);
+
+                Console.WriteLine(); 
+
             }
-        
-        
-        
-        
-        
-        
+            Console.WriteLine("Part 2");
+            List<string> vegetables = new List<string>();
+            vegetables.Add("Carrot");
+            vegetables.Add("Beet");
+            vegetables.Add("celery");
+            vegetables.Add("Radish");
+            vegetables.Add("Cabbage");
+
+
+
+
+
+
+
+
+
         }
 
 
 
-            
+
     }
 }
