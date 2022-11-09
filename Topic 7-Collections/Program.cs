@@ -106,10 +106,10 @@ namespace Topic_7_Collections
             vegetables.Add("celery");
             vegetables.Add("Radish");
             vegetables.Add("Cabbage");
-            for (int i = 0; i < list.Count; i++) 
-            {
-                Console.WriteLine(list[i]);
-            }
+            //for (int i = 0; i < list.Count; i++) 
+            //{
+             //   Console.WriteLine(list[i]);
+            //}
 
 
 
