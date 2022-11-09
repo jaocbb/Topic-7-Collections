@@ -17,7 +17,7 @@ namespace Topic_7_Collections
             // Pull to git
             int choice = 0, removeNum,remnum;
             //string newnum = new;
-            Console.WriteLine("Test1");
+            Console.WriteLine("Test2");
             Console.ReadLine();
             Console.WriteLine("Here are the numbers I chose for you");
             int[] nums = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 19, 18, 12, 16, 15, 14, 13, 12, 11, 15, 14 };
