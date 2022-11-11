@@ -98,30 +98,22 @@ namespace Topic_7_Collections
             //    Console.WriteLine(); 
 
             //}
-            string choice; 
+            string choiceveg; 
             Console.WriteLine("Part 2");
-            List<string> vegetables = new List<string>();
-            vegetables.Add("Carrot");
-            vegetables.Add("Beet");
-            vegetables.Add("celery");
-            vegetables.Add("Radish");
-            vegetables.Add("Cabbage");
-            for (int i = 0; i < vegetables.Count; i++)
-            {
-                Console.WriteLine(vegetables[i]);
-            }
+            List<string> vegetables = new List<string>() { "Carrot,Beet,Celery,Radish,Cabbage" };
+            Console.WriteLine("Heres your list of vegetables");
+            Console.WriteLine(vegetables);
+            choiceveg = Convert.ToString(Console.ReadLine());
             Console.WriteLine("Click 1 to remove a vegetable by index");
             Console.WriteLine("Click 2 to remove a vegetable by value");
             Console.WriteLine("CLick 3 to serch for a vegetable");
             Console.WriteLine("CLick 4 to add a vegetable");
             Console.WriteLine("Click 5 to sort the list");
             Console.WriteLine("Click 6 to clear the list");
-            if (choice == 1) 
-            {
-                
-            }
-
-
+          //  if (choiceveg == 1)
+           // {
+            //    Console.WriteLine
+           // }
 
 
 
