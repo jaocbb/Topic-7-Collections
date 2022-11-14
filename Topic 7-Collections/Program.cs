@@ -98,22 +98,82 @@ namespace Topic_7_Collections
             //    Console.WriteLine(); 
 
             //}
-            string choiceveg; 
+            string choiceveg,remveg,serchveg,newveg; 
             Console.WriteLine("Part 2");
-            List<string> vegetables = new List<string>() { "Carrot,Beet,Celery,Radish,Cabbage" };
+            List<string> veglist = new List<string>() { "Carrot,Beet,Celery,Radish,Cabbage" };
+            var vegetables = String.Join(",", veglist);
             Console.WriteLine("Heres your list of vegetables");
             Console.WriteLine(vegetables);
-            choiceveg = Convert.ToString(Console.ReadLine());
             Console.WriteLine("Click 1 to remove a vegetable by index");
             Console.WriteLine("Click 2 to remove a vegetable by value");
             Console.WriteLine("CLick 3 to serch for a vegetable");
             Console.WriteLine("CLick 4 to add a vegetable");
             Console.WriteLine("Click 5 to sort the list");
             Console.WriteLine("Click 6 to clear the list");
-          //  if (choiceveg == 1)
-           // {
-            //    Console.WriteLine
-           // }
+            choiceveg = Convert.ToString(Console.ReadLine());
+            if (choiceveg == "1")
+            {
+                var list = new Dictionary<int, string>
+                {
+                   { 1, "Carrot" },
+                   { 2, "Beet" },
+                   { 3, "Celery" },
+                   {4, "Radish" },
+                   {5,"Cabbage" },
+                };
+                var item = list.FirstOrDefault(kvp => kvp.Value == "Carrot");
+                // Remove by value
+                list.Remove(item.Key);
+                // Remove by key
+                list.Remove(0);
+                vegetables = String.Join(",", veglist);
+                Console.WriteLine(vegetables);
+            }
+            if (choiceveg == "2") 
+            {
+                remveg = Convert.ToString(Console.ReadLine());
+                veglist.Remove(remveg);
+                vegetables = String.Join(",", veglist);
+                vegetables.ToUpper();
+                Console.WriteLine(vegetables);
+
+            }
+            if (choiceveg == "3")
+            {
+                Console.WriteLine("What vegetable would you like to serch for");
+                serchveg = Convert.ToString(Console.ReadLine());
+                string[] veglist2 = { "Carrot", "Celery", "bill", "Radish", "Cabbage", "Beet"};
+                var stringToFind = (serchveg);
+
+                string[] result = Array.FindAll(veglist2, element => element.ToLower() == stringToFind); 
+
+            }
+            if (choiceveg == "4")
+            {
+                Console.WriteLine("what vegetable would you like to add?");
+                newveg = Convert.ToString(Console.ReadLine());
+                veglist.Add(newveg);
+                vegetables = String.Join(",", veglist);
+                Console.WriteLine(vegetables);
+
+            }
+
+            if (choiceveg == "5")
+            {
+                List<string> sortveg = new List<string>() { "Carrot", "Beet", "Radish", "Cabbage", "Celery" };
+                var sortedList = sortveg.OrderBy(x => x).ToList();
+                Console.WriteLine(String.Join(", ", sortedList)); 
+                  
+            }
+        
+            if  (choiceveg == "6")
+            {
+                veglist.Clear();
+
+            }
+
+
+
 
 
 
