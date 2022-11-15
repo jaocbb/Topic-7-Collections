@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -16,30 +17,30 @@ namespace Topic_7_Collections
         static void Main(string[] args)
         {
 
-            //int choice = 0,remnum,addnum;
+            //int choice = 0, remnum, addnum;
             //Console.WriteLine("Here are the numbers I chose for you");
-            //List<int> nums = new List<int>{ 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 19, 18, 12, 16, 15, 14, 13, 12, 11, 15, 14 };
+            //List<int> nums = new List<int> { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 19, 18, 12, 16, 15, 14, 13, 12, 11, 15, 14 };
             //var number = String.Join(",", nums);
             //Console.Write(number);
             //Console.WriteLine();
             //Console.WriteLine("Click 1 to sort them from least to greatest.");
             //Console.WriteLine("Click 2 to have a new list of numbers.");
             //Console.WriteLine("Click 3 to Remove a number(by value)");
-            //Console.WriteLine("CLick 4 to add a value");
-            //Console.WriteLine("Click 5 to count the number of occurrences of a specified number"); 
-            //Console.WriteLine("CLick 6 to Print the largest number");
+            //Console.WriteLine("Click 4 to add a value");
+            //Console.WriteLine("Click 5 to count the number of occurrences of a specified number");
+            //Console.WriteLine("Click 6 to Print the largest number");
             //Console.WriteLine("Click 7 to print the smallest value");
             //Console.WriteLine("Click 8 to quit");
             //choice = Convert.ToInt32(Console.ReadLine());
-            //if (choice == 1) 
+            //if (choice == 1)
             //{
             //    nums.Sort();
             //    number = String.Join(",", nums);
             //    Console.WriteLine(number);
             //}
-            //if (choice == 2) 
+            //if (choice == 2)
             //{
-            //    int[] Newnums = { 20,19,19,18,18,17,18,19,10,10,10,15,14,12,17,16,17,18,19,20,10,11,12,13,14,15 };
+            //    int[] Newnums = { 20, 19, 19, 18, 18, 17, 18, 19, 10, 10, 10, 15, 14, 12, 17, 16, 17, 18, 19, 20, 10, 11, 12, 13, 14, 15 };
             //    var Newnumbers = String.Join(",", Newnums);
             //    Console.WriteLine(Newnumbers);
             //}
@@ -52,7 +53,7 @@ namespace Topic_7_Collections
             //    Console.WriteLine(number);
 
             //}
-            //if (choice == 4) 
+            //if (choice == 4)
             //{
             //    Console.WriteLine("Which number would you like to add");
             //    addnum = Convert.ToInt32(Console.ReadLine());
@@ -61,7 +62,7 @@ namespace Topic_7_Collections
             //    Console.WriteLine(number);
 
             //}
-            //if (choice == 5) 
+            //if (choice == 5)
             //{
 
             //    Console.WriteLine("Here are the numbers occurrences");
@@ -69,36 +70,37 @@ namespace Topic_7_Collections
             //    var g = count.GroupBy(i => i);
             //    foreach (var grp in g)
             //    {
-            //        Console.WriteLine("{0} {1}",grp.Key,grp.Count());
+            //        Console.WriteLine("{0} {1}", grp.Key, grp.Count());
             //    }
 
             //}
-            //if (choice == 6) 
+            //if (choice == 6)
             //{
             //    Console.Write("The largest number is :");
             //    int[] numbers = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 19, 18, 12, 16, 15, 14, 13, 12, 11, 15, 14 };
             //    int largestNumber = numbers.Max();
-            //    Console.WriteLine(largestNumber);
+            //    Console.Write(largestNumber);
             //    Console.ReadLine();
             //}
-            //if (choice == 7) 
+            //if (choice == 7)
             //{
             //    Console.WriteLine("The smallest number is :");
             //    int[] numbers = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 19, 18, 12, 16, 15, 14, 13, 12, 11, 15, 14 };
             //    int smallestNumber = numbers.Min();
-            //    Console.WriteLine(smallestNumber);
+            //    Console.Write(smallestNumber);
             //    Console.ReadLine();
             //}
-            //if (choice == 8) 
+            //if (choice == 8)
             //{
 
             //    Console.WriteLine("Closing");
             //    Environment.Exit(0);
 
-            //    Console.WriteLine(); 
+            //    Console.WriteLine();
 
             //}
-            string choiceveg,remveg,serchveg,newveg; 
+            // git wont push
+            string choiceveg, remveg, vegserch, newveg;
             Console.WriteLine("Part 2");
             List<string> veglist = new List<string>() { "Carrot,Beet,Celery,Radish,Cabbage" };
             var vegetables = String.Join(",", veglist);
@@ -108,83 +110,76 @@ namespace Topic_7_Collections
             Console.WriteLine("Click 2 to remove a vegetable by value");
             Console.WriteLine("CLick 3 to serch for a vegetable");
             Console.WriteLine("CLick 4 to add a vegetable");
-            Console.WriteLine("Click 5 to sort the list");
+            Console.WriteLine("Click 5 to sort the list by alphabetical order");
             Console.WriteLine("Click 6 to clear the list");
             choiceveg = Convert.ToString(Console.ReadLine());
+
             if (choiceveg == "1")
             {
-                var list = new Dictionary<int, string>
-                {
-                   { 1, "Carrot" },
-                   { 2, "Beet" },
-                   { 3, "Celery" },
-                   {4, "Radish" },
-                   {5,"Cabbage" },
-                };
-                var item = list.FirstOrDefault(kvp => kvp.Value == "Carrot");
-                // Remove by value
-                list.Remove(item.Key);
-                // Remove by key
-                list.Remove(0);
-                vegetables = String.Join(",", veglist);
-                Console.WriteLine(vegetables);
-            }
-            if (choiceveg == "2") 
-            {
-                remveg = Convert.ToString(Console.ReadLine());
-                veglist.Remove(remveg);
-                vegetables = String.Join(",", veglist);
-                vegetables.ToUpper();
-                Console.WriteLine(vegetables);
+                Console.WriteLine("Which vegetable would you like to remove by index.");
+                int indexrem = Convert.ToInt32(Console.ReadLine());
+                StringCollection vegcol = new StringCollection();
+                String[] veglist2 = new String[] { "1,Carrot", "2,Beet", "3,Celery", "4,Raddish", "5,Cabbage" };
+                vegcol.AddRange(veglist2);
+                foreach (Object obj in vegcol)
+                Console.WriteLine(obj);
+                vegcol.RemoveAt(indexrem);
+                Console.WriteLine("The list should look like this now with your removed vegetable : ");
+                foreach (Object obj in vegcol)
+                    Console.WriteLine(obj);
 
+            }
+            if (choiceveg == "2")
+            {
+               Console.WriteLine("Which vegetable would you like to remove by value?");
+               remveg = Convert.ToString(Console.ReadLine());
+               veglist.Remove(remveg);
+               vegetables = String.Join(",", veglist);
+               Console.WriteLine(vegetables);
             }
             if (choiceveg == "3")
             {
                 Console.WriteLine("What vegetable would you like to serch for");
-                serchveg = Convert.ToString(Console.ReadLine());
-                string[] veglist2 = { "Carrot", "Celery", "bill", "Radish", "Cabbage", "Beet"};
-                var stringToFind = (serchveg);
-
-                string[] result = Array.FindAll(veglist2, element => element.ToLower() == stringToFind); 
-
+                vegserch = Convert.ToString(Console.ReadLine());
+                List<string> veglist2 = new List<string>();
+                veglist2.Add("Carrot");
+                veglist2.Add("Beet");
+                veglist2.Add("Radish");
+                veglist2.Add("Cabbage");
+                veglist2.Add("Celery");
             }
             if (choiceveg == "4")
             {
                 Console.WriteLine("what vegetable would you like to add?");
                 newveg = Convert.ToString(Console.ReadLine());
-                veglist.Add(newveg);
+                veglist.Add(newveg);                           //WORKS
                 vegetables = String.Join(",", veglist);
                 Console.WriteLine(vegetables);
-
             }
-
             if (choiceveg == "5")
             {
                 List<string> sortveg = new List<string>() { "Carrot", "Beet", "Radish", "Cabbage", "Celery" };
-                var sortedList = sortveg.OrderBy(x => x).ToList();
-                Console.WriteLine(String.Join(", ", sortedList)); 
-                  
+                var sortedList = sortveg.OrderBy(x => x).ToList(); //WORKS
+                Console.WriteLine(String.Join(", ", sortedList));
             }
-        
-            if  (choiceveg == "6")
+            if (choiceveg == "6")
             {
                 veglist.Clear();
-
             }
-            //Test
+          
 
 
 
 
 
 
-            Console.ReadLine();
+                Console.ReadLine();
+
+
+            
+
 
 
         }
-
-
-
-
     }
 }
