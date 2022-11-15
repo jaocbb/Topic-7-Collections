@@ -114,6 +114,8 @@ namespace Topic_7_Collections
             Console.WriteLine("Click 6 to clear the list");
             choiceveg = Convert.ToString(Console.ReadLine());
 
+            //test
+            Console.WriteLine("Test");
             if (choiceveg == "1")
             {
                 Console.WriteLine("Which vegetable would you like to remove by index.");
